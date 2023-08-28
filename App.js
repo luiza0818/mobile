@@ -8,14 +8,15 @@ import { useFonts, Montserrat_400Regular, Montserrat_700Bold } from '@expo-googl
 import mock from './src/mocks/Carrossel';
 import Imagens from './telas/Cesta';
 import SobreNos from './telas/SobreNos';
-import Produtos from './telas/Produtos'
+import Produtos from './telas/Produtos';
+import MinhaCesta from './telas/MinhaCesta';
 
-function Inicio() {
-  return <SafeAreaView>
-            <Imagens {...mock} />
-            <StatusBar />
-          </SafeAreaView>;
-}
+// function Inicio() {
+//   return <SafeAreaView>
+//             <Imagens {...mock} />
+//             <StatusBar />
+//           </SafeAreaView>;
+// }
 
 const Tab = createBottomTabNavigator();
 
@@ -54,9 +55,11 @@ function TabsMenu() {
         tabBarInactiveTintColor: 'pink',
       })}
     >
-      <Tab.Screen name="Inicio" component={Inicio} />
+      <Tab.Screen name="Inicio" component={Imagens} />
       <Tab.Screen name="Sobre nós" component={SobreNos} />
       <Tab.Screen name="Produtos" component={Produtos} />
+      <Tab.Screen name="Minha Cesta" component={MinhaCesta} />
+      
     </Tab.Navigator>
   );
 }
